@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block start %}
+<section >
+  <video id="video1" src="{% static  'videos/reat.mp4' %}" autoplay loop muted plays-inline></video>
+  
+  </section>
+  
+  <section class="py-6">
+    <div class="container">
+      <div class="row mb-5">
+        <!-- blog item-->
+        {% for blog in category_posts %}
+        <div class="col-lg-4 col-sm-6 mb-4 hover-animate">
+          <div class="card shadow border-0 h-100">
+            <a href="{% url 'blog_detail' blog.pk %}">
+              <img class="img-fluid card-img-top" src="/media/{{blog.image}}" alt="..."/></a>
+            <div class="card-body"><a class="text-uppercase text-muted text-sm letter-spacing-2" href="#">
+              {{blog.user.username}} </a>
+              <h5 class="my-2"><a class="text-dark" href="{% url 'blog_detail' blog.pk %}">
+               {{blog.title}}          </a></h5>
+              <p class="text-gray-500 text-sm my-3"><i class="far fa-clock mr-2"></i>
+                {{blog.created_at}}</p>
+              <!-- <p class="my-2 text-muted text-sm">
+                {{blog.content|safe}}
+              </p>
+            -->
+            <div id ="categoryalign1">
+                <h6>Category:  <a id="category1" href="{% url 'category' blog.category %} "><p>{{blog.category}}</p></a></h6>
+              </div>   
+            <style>
+              #categoryalign1 h6, 
+              #categoryalign1 p{
+                display: inline;
+                vertical-align: bottom;
+              }
+              
+              #category1 {
+                font-size: 17px;
+                font-weight: bold;
+                color:#009cbc;
+              }
+            </style>
+              <br>
+              <a class="btn btn-link pl-0"href="{% url 'blog_detail' blog.pk %}">Read more<i class="fa fa-long-arrow-alt-right ml-2"></i></a>
+              <h2 id="love3"><i id="love2" class="fas fa-heart"></i>  {{blog.total_likes}} LIKES</h2>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      
+      
+      </div>
+    </div>
+    
+  </section>
+  <!-- Footer-->
+
+
+  {% endblock %}

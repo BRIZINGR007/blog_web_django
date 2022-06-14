@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% load static %}
+{% block start %}
+<header>
+    <nav  id ="zen" class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container-fluid">
+        <article id="brizingr">
+          <a id="textalign" class="navbar-brand" href="/"><strong>BRIZINGR-007</strong></a>
+        </article>
+        
+        
+        <article id="threebar">
+          <button 
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        </article>
+        
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+          <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+            <article id="addblog">
+              <a id="GFG1" class="navbar-brand" href="{% url 'add_blog' %}"><strong>Add Blogs</strong></a>
+            </article>
+          </li>
+          <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+            <article id="logout">
+              <a  id="GFG1" class="navbar-brand" href="{% url 'logout_view' %}"><strong>Log Out</strong></a>
+            </article>
+          </li>
+
+          {% else %}
+          <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+            <article id="login">
+              <a id="GFG1" class="navbar-brand" href="{% url 'login_view' %}">
+                <strong>Log In to Start</strong>
+              </a>
+            </article>
+          </li>
+
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</header>
+<script>
+    window.addEventListener("scroll",function(){
+        let header = document.querySelector("header");
+        header.classList.toggle("sticky",window.screenY>0);
+    })
+</script>
+<video id="video1" src="{% static  'videos/reat.mp4' %}" autoplay loop muted plays-inline></video>
+<section style="padding-top: 80px;">
+    <div class="container">
+       
+        <div class="row text-center">
+            <div class="col-xl-10 mx-auto"><img class="img-fluid mb-5"
+                    src="/media/{{blog_obj.image}}"
+                    alt=""></div>
+        </div>
+        <article id="com3">
+                    <span>{{blog_obj.content|safe}}</span>
+        </article>
+    </div >
+    <hr> 
+    <form action="{% url 'like_post' blog_obj.pk %}" 
+            method="POST">
+            {% csrf_token %}
+            <h2 id="love3"><button id="love4", class="btn" type="submit", name="post_id", value="{{blog_obj.id}}"><i id="love1" class="fas fa-heart"></i><p id="inline">{{blog_obj.total_likes}}LIKES</p>  </button></h2>
+            
+
+        </form>
+        <hr>
+    <div >
+        <article id="com2">
+            <a id="GFG" href="{% url 'add_comment' blog_obj.pk %}"><h2 id="addcom2">ADD COMMENT</h2></a>
+        </article>
+        
+        
+        {% if not blog_obj.comments.all %}
+
+        {% else %}
+            {% for comment in blog_obj.comments.all %}
+                <article id="com1">
+                    <strong>{{comment.name}} - {{comment.date_added}}</strong>
+                    <br>
+                    {{comment.body}}
+                </article>
+            {% endfor %}
+
+        {% endif %}
+    </div>
+    <style>
+        #inline{
+            display: inline-block;
+            color: #f282cb;
+            
+
+        }
+        #video1{  
+      position:fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+  
+      }
+        #GFG{
+            text-decoration: none;
+        }
+        #addcom2{
+            color: #146686;
+        }
+        #com1 {
+
+          position:relative;    
+          box-sizing: border-box;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-bottom: 20px;
+          padding: 20px;
+          border: 3.5px solid rgb(46, 46, 46);;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#eac3ff;
+        }
+        #com2 {
+            display: table;
+
+          position:relative;    
+          box-sizing: border-box;
+          text-align: center;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-bottom: 20px;
+          padding: 20px;
+          border: 3.5px solid rgb(46, 46, 46);;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#b7eda7;
+        }
+        #com3 {
+          position:relative;    
+          box-sizing: border-box;
+          margin-bottom: 20px;
+          padding: 20px;
+          border: 3.5px solid rgb(46, 46, 46);;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#b1ffd4;
+        }
+        img{
+            border: 3.5px solid rgb(46, 46, 46);
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+      </style>   
+    
+</section>
+
+
+
+
+
+{% endblock %}

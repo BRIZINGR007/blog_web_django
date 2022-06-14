@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from demo.bootstrapious.com/directory/1-6-1/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Apr 2021 09:21:30 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BRIZINGR007</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <script src="https://kit.fontawesome.com/f6dcf461c1.js" crossorigin="anonymous"></script>
+    <!-- Price Slider Stylesheets -->
+    <link rel="stylesheet" href="/media/css/nouislider.css">
+    <!-- Google fonts - Playfair Display-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+    <!-- Google fonts - Poppins-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+    <!-- swiper-->
+    <link rel="stylesheet" href="/media/css/swiper.min.css">
+    <!-- Magnigic Popup-->
+    <link rel="stylesheet" href="/media/css/magnific-popup.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/media/css/default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/media/css/custom.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+    <script src="/media/js/main.js"> </script>
+    
+   </head>
+  <body>
+    <input type="hidden" id="csrf" value="{{csrf_token}}">
+    <header class="header">
+     
+      <!-- Navbar  -->
+    <nav  id ="zen" class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container-fluid">
+        <article id="brizingr">
+          <a id="textalign" class="navbar-brand" href="/"><strong>BRIZINGR-007</strong></a>
+        </article>
+        
+        
+        <article id="threebar">
+          <button 
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        </article>
+        
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            {% if request.user.is_authenticated %}
+          <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+            <article id="addblog">
+              <a id="GFG1" class="navbar-brand" href="{% url 'add_blog' %}"><strong>Add Blogs</strong></a>
+            </article>
+          </li>
+          <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+            <article id="logout">
+              <a  id="GFG1" class="navbar-brand" href="{% url 'logout_view' %}"><strong>Log Out</strong></a>
+            </article>
+          </li>
+
+          {% else %}
+          <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block">
+            <article id="login">
+              <a id="GFG1" class="navbar-brand" href="{% url 'login_view' %}">
+                <strong>Log In to Start</strong>
+              </a>
+            </article>
+          </li>
+
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <!-- /Navbar -->
+    </header>
+    
+    <script src="/media/js/bootstrap.bundle.min.js"></script>
+    
+
+<script>
+
+</script>
+
+
+    {% block start %}
+
+
+    {% endblock %}
+
+    <style>
+      #video1{  
+      position:fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+  
+      }
+    </style>
+    
+    <style>
+      video{  
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+  
+      }
+      @media (min-aspect-ratio:16/9){
+          video{
+              width: 100%;
+              height: auto;
+          }
+          
+      }
+      @media (max-aspect-ratio:16/9){
+          video{
+              width: auto;
+              height: 100%;
+          }
+          
+      }
+  </style>
+   
+  
+  <style>
+    #GFG1{
+            text-decoration: none;
+        }
+        #addcom2{
+            color: #146686;
+        }
+    #threebar{
+          position:relative;    
+          border: 3.5px solid #462f5f;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#eac3ff;
+        }
+    #addblog{
+          position:relative;    
+          box-sizing: border-box;
+          padding-left: 20px;
+          border: 3.5px solid #093430;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#4fcf85;
+        }
+        #logout{
+          position:relative;    
+          box-sizing: border-box;
+          padding-left: 20px;
+          border: 3.5px solid #46163b;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#9c0051;
+        }
+        #login{
+          position:relative;    
+          box-sizing: border-box;
+          padding-left: 20px;
+          border: 3.5px solid #093430;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#4fcf85;
+        }
+
+    #brizingr{
+          position:relative;    
+          box-sizing: border-box;
+          padding-left: 20px;
+          border: 3.5px solid #093430;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#4fcf85;
+        }
+ 
+    
+
+    
+    #zen{
+      background-color:#13253300;
+      position:fixed;  
+      z-index:1;
+
+    }
+      #love1{
+          background: transparent;
+          border: none;
+          font-size: 30px;
+          outline: none;
+          color: #fd4da5;
+          
+      }
+      #love2{
+          background: transparent;
+          border: none;
+          font-size: 20px;
+          outline: none;
+          color: #fd4da5;
+          
+      }
+      #love3{
+          background: transparent;
+          border: none;
+          font-size: 20px;
+          outline: none;
+          color: #534b66;
+      }
+      #love4{
+          background: transparent;
+          border: none;
+          font-size: 30px;
+          text-align: center;
+          outline: none;
+          color: #534b66;
+      }
+  </style>
+  </body>
+
+
+</html>

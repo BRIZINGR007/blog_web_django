@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% load static %}
+{% block start %}
+    
+<section style="padding-top: 80px;">
+    <video id="video1" src="{% static  'videos/reat.mp4' %}" autoplay loop muted plays-inline></video>
+    <style>
+      #video1{  
+      position:fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+  
+      }
+    </style>
+    <div class="container mt-5">
+        <article id="vblog">
+            <a id="GFG" href="{% url 'see_blog' %}" ><h2 id="h2ablog">See Your Blogs</h2></a>
+        </article>
+            <form method="post" class="mt-5 pt-5 mb-5 pb-5" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <p id="name" class="tag"><strong>TITLE</strong></p>
+                        <article id="namebox">
+                            <input type="text" class="form-control" placeholder="Enter title" name="title">
+                        </article>
+                        <br>
+
+                        <p id="name2" class="tag"><strong>CONTENT</strong></p>
+                        <article id="namebox1">
+                            {{form.media}}
+                            {{form.content}}
+                        </article>
+                        <br>
+                                              
+                        <p id="name3" class="tag"><strong>IMAGE</strong></p>
+                        <article id="namebox">
+                            <input type="file" name="image" class="form-control" >
+                        </article> 
+                        <br>
+                        <p id="name4" class="tag"><strong>Category</strong></p> 
+                        <article id="namebox">
+                            {{form.category}}
+                        </article>
+                        
+                    </div>
+                </div>
+                <br>
+                <article>
+                    <button id="button1" type="submit" >
+                        <h6 id="textcomment"><strong>CREATE BLOG</strong></h6>
+                    </button>
+                </article>
+                
+    
+        </form>
+    
+    </div>
+<style>
+    #textcomment{
+            font-family: "Shadows Into Light", cursive;
+
+            letter-spacing: 3px;
+            color: black;
+        }
+    #button1{
+          display: table;
+          position:relative;    
+          box-sizing: border-box;
+          padding: 10px;
+
+          border: 3.5px solid rgb(46, 46, 46);;
+          border-radius: 8px;
+
+          background-color:#c1cbff;
+
+        }
+    #name {
+        font-family: "Shadows Into Light", cursive;
+        font-size: 130%;
+        color: rgb(255, 255, 255);
+        letter-spacing: 3px;
+            display: table;
+            position:relative;    
+          box-sizing: border-box;
+          margin-left: 20px;
+          margin-right: 10px;
+          margin-bottom: -3.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border: 4px solid rgb(0, 0, 0);
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+
+          background-color:#60aeea;
+        }
+        #name2 {
+        font-family: "Shadows Into Light", cursive;
+        color: aliceblue;
+        font-size: 130%;
+        letter-spacing: 3px;
+            display: table;
+            position:relative;    
+          box-sizing: border-box;
+          margin-left: 20px;
+          margin-right: 10px;
+          margin-bottom: -3.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border: 4px solid rgb(0, 0, 0);
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+
+          background-color:#148474;
+        }
+        #name3 {
+        font-family: "Shadows Into Light", cursive;
+        color: aliceblue;
+        font-size: 130%;
+        letter-spacing: 3px;
+            display: table;
+            position:relative;    
+          box-sizing: border-box;
+          margin-left: 20px;
+          margin-right: 10px;
+          margin-bottom: -3.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border: 4px solid rgb(0, 0, 0);
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+
+          background-color:#124960;
+        }
+        #name4 {
+        font-family: "Shadows Into Light", cursive;
+        color: rgb(49, 49, 49);
+        font-size: 130%;
+        letter-spacing: 3px;
+            display: table;
+            position:relative;    
+          box-sizing: border-box;
+          margin-left: 20px;
+          margin-right: 10px;
+          margin-bottom: -3.5px;
+          padding-left: 20px;
+          padding-right: 20px;
+          border: 4px solid rgb(0, 0, 0);
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+
+          background-color:#f8ece1;
+        }
+    #namebox {
+      border: 4px solid black;
+      border-radius: 8.7px;
+    }
+    #namebox1{
+      border: 4px solid black;
+      border-radius: 12px;
+    }
+    #GFG{
+            text-decoration: none;
+        }
+    #h2ablog{
+            color: #332e49;
+        }
+    #vblog {
+        display: table;
+        position:relative; 
+          position:relative;    
+          box-sizing: border-box;
+          text-align: center;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-bottom: 20px;
+          padding: 10px;
+          border: 3.5px solid rgb(46, 46, 46);;
+          border-radius: 8px;
+          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+          background-color:#b7eda7;
+        }
+</style>
+</section>
+
+
+
+{% endblock %}

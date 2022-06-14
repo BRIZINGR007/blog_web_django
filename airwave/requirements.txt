@@ -1,0 +1,101 @@
+arabic-reshaper==2.1.3
+asgiref @ file:///tmp/build/80754af9/asgiref_1625643473416/work
+asn1crypto==1.5.1
+backend==0.2.4.1
+beautifulsoup4==4.11.1
+cachetools==4.2.4
+certifi==2021.10.8
+cffi==1.15.0
+charset-normalizer==2.0.12
+ChatterBot==1.0.4
+chatterbot-corpus==1.2.0
+click==8.1.3
+colorama==0.4.4
+cryptography==37.0.1
+cssselect2==0.6.0
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1635519461629/work
+decorator==4.4.2
+defusedxml==0.7.1
+dj-database-url==0.5.0
+Django @ file:///tmp/build/80754af9/django_1625585912945/work
+django-allauth==0.50.0
+django-autoslug==1.9.8
+django-ckeditor==6.4.0
+django-crispy-forms==1.14.0
+django-environ==0.8.1
+django-etc==1.3.1
+django-froala-editor==4.0.9
+django-heroku==0.3.1
+django-hitcount==1.3.5
+django-js-asset==2.0.0
+django-social-share==2.2.1
+django-taggit==3.0.0
+django-unicorn==0.45.0
+django-widget-tweaks==1.4.12
+djangorestframework==3.13.1
+fonttools @ file:///D:/bld/fonttools_1643722806906/work
+future==0.18.2
+gunicorn==20.1.0
+html5lib==1.1
+idna==3.3
+joblib==1.1.0
+kiwisolver @ file:///D:/bld/kiwisolver_1635836893295/work
+lxml==4.8.0
+mathparse==0.1.2
+matplotlib @ file:///D:/bld/matplotlib-suite_1639359208125/work
+munkres==1.1.4
+mysqlclient==2.1.0
+nltk==3.7
+numpy @ file:///D:/bld/numpy_1643959111320/work
+oauthlib==3.2.0
+olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
+orjson==3.6.8
+oscrypto==1.3.0
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1637239678211/work
+Pillow==8.4.0
+Pint==0.19.2
+psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
+pycparser==2.21
+pyHanko==0.13.1
+pyhanko-certvalidator==0.19.5
+PyJWT==2.3.0
+pymongo==3.12.3
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1642753572664/work
+PyPDF3==1.0.6
+PyQt5==5.12.3
+PyQt5_sip==4.19.18
+PyQtChart==5.12
+PyQtWebEngine==5.12.1
+python-bidi==0.4.2
+python-dateutil==2.7.5
+python3-openid==3.2.0
+pytz==2021.3
+pytz-deprecation-shim==0.1.0.post0
+PyYAML==3.13
+qrcode==7.3.1
+regex==2022.6.2
+reportlab==3.6.9
+requests==2.27.1
+requests-oauthlib==1.3.1
+scipy @ file:///C:/bld/scipy_1644357595180/work
+shortuuid==1.0.9
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+soupsieve==2.3.2.post1
+SQLAlchemy==1.2.19
+sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+svglib==1.2.1
+tinycss2==1.1.1
+torch==1.11.0
+torchvision==0.12.0
+tornado @ file:///D:/bld/tornado_1635819745510/work
+tqdm==4.64.0
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1631814937681/work
+tzdata==2022.1
+tzlocal==4.2
+unicodedata2 @ file:///D:/bld/unicodedata2_1640031227379/work
+uritools==4.0.0
+urllib3==1.26.9
+webencodings==0.5.1
+whitenoise==6.1.0
+wincertstore==0.2
+xhtml2pdf==0.2.7
